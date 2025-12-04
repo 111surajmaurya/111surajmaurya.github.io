@@ -5,175 +5,233 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Suraj Maurya - AI Scientist</title>
   <style>
+    :root {
+      --bg: #0d0d0d;
+      --card: #141414;
+      --text: #e6e6e6;
+      --accent: #4da6ff;
+    }
+    
+    body.light {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --text: #111;
+      --accent: #0059b3;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0d0d0d;
-      color: #e6e6e6;
+      background: var(--bg);
+      color: var(--text);
       scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
     }
 
-    header {
-      background: linear-gradient(to bottom right, #1a1a1a, #000000);
-      padding: 120px 20px;
+    /* HERO SECTION */
+    .hero {
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 48px;
-      letter-spacing: 2px;
-      font-weight: 700;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 20px;
-      opacity: 0.8;
+    .hero-content {
+      position: relative;
+      color: white;
+      max-width: 700px;
+      animation: fadeUp 1.5s ease;
     }
 
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FLOATING ELEMENTS */
+    .float-circle {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(77, 166, 255, 0.15);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* NAVBAR */
     nav {
       background: #111;
       padding: 15px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid #222;
-    }
-
-    nav ul {
-      margin: 0;
-      padding: 0;
       display: flex;
       justify-content: center;
       gap: 40px;
-      list-style: none;
+      border-bottom: 1px solid #222;
     }
 
     nav a {
-      color: #e6e6e6;
+      color: var(--text);
       text-decoration: none;
       font-size: 16px;
-      padding-bottom: 5px;
       transition: 0.3s;
     }
 
     nav a:hover {
-      border-bottom: 2px solid #4da6ff;
+      color: var(--accent);
     }
 
+    /* SECTION */
     section {
       max-width: 900px;
-      margin: 80px auto;
+      margin: 60px auto;
       padding: 20px;
-      background: #141414;
+      background: var(--card);
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      transition: background 0.4s;
     }
 
-    h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #4da6ff;
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+      border-left: 3px solid var(--accent);
     }
 
-    ul li {
-      margin-bottom: 12px;
-      line-height: 1.6;
+    .timeline-entry {
+      margin-bottom: 25px;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px 0;
-      background: #0f0f0f;
-      margin-top: 60px;
-      border-top: 1px solid #222;
-      font-size: 14px;
-      opacity: 0.7;
+    .timeline-entry h3 { color: var(--accent); }
+
+    /* CARDS */
+    .card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .highlight-box {
-      background: #1b1b1b;
-      padding: 20px;
+    .card {
+      background: var(--card);
+      padding: 15px;
       border-radius: 8px;
-      margin-top: 15px;
-      border-left: 4px solid #4da6ff;
+      transition: 0.3s;
+      border: 1px solid #333;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+
+    /* TOGGLE BUTTON */
+    #themeToggle {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Suraj Maurya</h1>
-  <p>AI Scientist | Computer Vision | Deep Learning</p>
+<!-- Floating animated circles -->
+<div class="float-circle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+<div class="float-circle" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
+
+<!-- HERO SECTION -->
+<header class="hero">
+  <div class="hero-content">
+    <h1 style="font-size: 52px; margin-bottom: 10px;">Suraj Maurya</h1>
+    <p style="font-size: 22px; opacity: .85;">AI Scientist | Computer Vision | Deep Learning</p>
+  </div>
 </header>
 
+<!-- NAV -->
 <nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#resume">Experience</a></li>
-    <li><a href="#projects">Certifications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <a href="#about">About</a>
+  <a href="#resume">Experience</a>
+  <a href="#projects">Certifications</a>
+  <a href="#contact">Contact</a>
 </nav>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>Accomplished AI Scientist with 7+ years of experience in developing and deploying cutting-edge machine learning models in sports analytics, autonomous systems, and computer vision. Proven expertise in deep learning, MLOps, and scalable AI solutions, with a track record of patents and high-impact projects. Passionate about leading AI innovations and mentoring teams to drive business success.</p>
+  <p>Accomplished AI Scientist with 7+ years of experience in machine learning, sports analytics, autonomous systems, and computer vision. Proven expertise in scalable AI systems, product deployment, and innovation-driven research. Passionate about advancing AI technology and building high‑impact solutions.</p>
 </section>
 
+<!-- EXPERIENCE TIMELINE -->
 <section id="resume">
-  <h2>Experience</h2>
-  <div class="highlight-box">
-    <h3>Senior AI Scientist - Stats Perform (2021 - Present)</h3>
-    <ul>
-      <li>Patented Graph Recurrent Neural Network for real-time soccer player identification, deployed at scale for 6000+ games each season.</li>
-      <li>Designed EKF-based ball tracker improving tracking accuracy by 30 percent.</li>
-      <li>Trained custom CRNN OCR achieving 95 percent accuracy on blurred jerseys.</li>
-    </ul>
-  </div>
+  <h2>Experience Timeline</h2>
+  <div class="timeline">
 
-  <div class="highlight-box">
-    <h3>Research Engineer - Hi-Tech Robotics (2019 - 2021)</h3>
-    <ul>
-      <li>Built deep learning and robotics solutions for real-world autonomous systems.</li>
-      <li>Optimized segmentation models for Jetson Nano achieving real-time inference.</li>
-      <li>Developed pallet detection and pose estimation using camera and laser sensors.</li>
-      <li>Designed 3D obstacle detection improving navigation safety by 25 percent.</li>
-    </ul>
-  </div>
+    <div class="timeline-entry">
+      <h3>Senior AI Scientist - Stats Perform (2021 - Present)</h3>
+      <p>Developed GRNN for player ID, EKF ball tracking, and high‑accuracy OCR models deployed across large‑scale sports analytics pipelines.</p>
+    </div>
 
-  <div class="highlight-box">
-    <h3>Data Scientist - Claim Genius (2019)</h3>
-    <ul>
-      <li>Developed vehicle damage analysis models improving claim automation by 40 percent.</li>
-    </ul>
-  </div>
+    <div class="timeline-entry">
+      <h3>Research Engineer - Hi-Tech Robotics (2019 - 2021)</h3>
+      <p>Designed autonomous navigation systems, Jetson‑optimized models, pallet detection, safety-critical vision systems.</p>
+    </div>
 
-  <div class="highlight-box">
-    <h3>Kritikal Solutions – Computer Vision Engineer</h3>
-    <ul>
-      <li>Developed 2mm-precision real-time log measurement system.</li>
-      <li>Trained YOLOv3-based vehicle make and CNN-based color classifier.</li>
-      <li>Built polarized-image pore detection system for skincare analysis.</li>
-    </ul>
+    <div class="timeline-entry">
+      <h3>Data Scientist - Claim Genius (2019)</h3>
+      <p>Built damage detection models improving claim automation and classification accuracy.</p>
+    </div>
+
+    <div class="timeline-entry">
+      <h3>Computer Vision Engineer - Kritikal Solutions</h3>
+      <p>Developed high‑precision industrial CV systems and automotive classifiers.</p>
+    </div>
+
   </div>
 </section>
 
+<!-- CERTIFICATIONS CARD GRID -->
 <section id="projects">
   <h2>Certifications & Courses</h2>
-  <ul>
-    <li>Introduction to Diffusion Models</li>
-    <li>AI Agents Fundamental</li>
-    <li>Generative AI with LLMs</li>
-    <li>TensorFlow for AI, ML, and Deep Learning</li>
-    <li>Convolutional Neural Networks Specialization</li>
-    <li>Neural Networks & Deep Learning</li>
-    <li>Structuring Machine Learning Projects</li>
-    <li>Digital Image Processing</li>
-  </ul>
+  <div class="card-list">
+    <div class="card">Introduction to Diffusion Models</div>
+    <div class="card">AI Agents Fundamentals</div>
+    <div class="card">Generative AI with LLMs</div>
+    <div class="card">TensorFlow for AI & ML</div>
+    <div class="card">CNN Specialization</div>
+    <div class="card">Neural Networks & Deep Learning</div>
+    <div class="card">Machine Learning Project Structuring</div>
+    <div class="card">Digital Image Processing</div>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:111surajmaurya@gmail.com">111surajmaurya@gmail.com</a></p>
@@ -181,9 +239,13 @@
   <p>LinkedIn: <a href="https://linkedin.com/in/suraj-maurya-a44220a8">linkedin.com/in/suraj-maurya-a44220a8</a></p>
 </section>
 
-<footer>
-  <p>© 2025 Suraj Maurya. All Rights Reserved.</p>
-</footer>
+<!-- THEME TOGGLE -->
+<button id="themeToggle">Toggle Theme</button>
+
+<script>
+  const btn = document.getElementById('themeToggle');
+  btn.onclick = () => document.body.classList.toggle('light');
+</script>
 
 </body>
 </html>
