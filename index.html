@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -43,14 +43,21 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.15); /* very light overlay */
+      backdrop-filter: none; /* remove blur completely */
     }
 
     .hero-content {
       position: relative;
       color: white;
       max-width: 700px;
-      text-shadow: 0 0 4px rgba(0,0,0,0.35);
+      filter: none; /* ensure no blur */
+      text-shadow: 0 0 4px rgba(0,0,0,0.35); /* improve clarity */
+      animation: fadeUp 1.5s ease;
+    } {
+      position: relative;
+      color: white;
+      max-width: 700px;
       animation: fadeUp 1.5s ease;
     }
 
@@ -75,6 +82,7 @@
       100% { transform: translateY(0); }
     }
 
+    /* NAVBAR */
     nav {
       background: #111;
       padding: 15px 0;
@@ -98,6 +106,7 @@
       color: var(--accent);
     }
 
+    /* SECTION */
     section {
       max-width: 900px;
       margin: 60px auto;
@@ -108,6 +117,7 @@
       transition: background 0.4s;
     }
 
+    /* TIMELINE */
     .timeline {
       position: relative;
       margin-left: 20px;
@@ -121,6 +131,7 @@
 
     .timeline-entry h3 { color: var(--accent); }
 
+    /* CARDS */
     .card-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -131,8 +142,8 @@
       background: var(--card);
       padding: 15px;
       border-radius: 8px;
-      border: 1px solid #333;
       transition: 0.3s;
+      border: 1px solid #333;
     }
 
     .card:hover {
@@ -140,6 +151,7 @@
       border-color: var(--accent);
     }
 
+    /* TOGGLE BUTTON */
     #themeToggle {
       position: fixed;
       right: 20px;
@@ -157,9 +169,11 @@
 </head>
 <body>
 
+<!-- Floating animated circles -->
 <div class="float-circle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
 <div class="float-circle" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
 
+<!-- HERO SECTION -->
 <header class="hero">
   <div class="hero-content">
     <h1 style="font-size: 52px; margin-bottom: 10px;">Suraj Maurya</h1>
@@ -167,6 +181,7 @@
   </div>
 </header>
 
+<!-- NAV -->
 <nav>
   <a href="#about">About</a>
   <a href="#resume">Experience</a>
@@ -174,18 +189,56 @@
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>Accomplished AI Scientist with 7+ years of experience...</p>
+  <p>Senior ML Engineer with 8+ years building AI solutions in Sports Analytics, ADAS, and Computer Vision. 
+Specializes in scalable Computer Vision, ML, Generative AI, and patented high-impact innovations. </p>
 </section>
 
+<!-- EXPERIENCE TIMELINE -->
 <section id="resume">
   <h2>Experience Timeline</h2>
   <div class="timeline">
-    <!-- timeline entries -->
+
+    <div class="timeline-entry">
+      <h3>Stats Perform - Computer Vision-III Engineer (Aug 2021 - Present)</h3>
+      <p>Developed a diffusion based generative model leveraging transformers architecture, to impute the 
+complete trajectory of soccer players, using only 60-70% partial trajectories from broadcast footage.</p> 
+<p>Developed a patented Graph Recurrent Neural Network (GRNN) for real-time soccer player 
+identification, using spatial, temporal, and appearance features of the player. Scaled deployment 
+to 6,000+ games per season, reducing per-game processing time by 30%.</p>
+<p>Developed an Extended Kalman Filter based soccer ball tracker leveraging YOLO ball detections 
+to handle occlusion, nonlinear motion, and high-speed movement in broadcast footage, 
+achieving a 15% accuracy improvement over the baseline.</p> 
+<p>Designed and trained a CRNN based OCR model to accurately recognize jersey numbers in 
+low-resolution and motion-blurred images, achieving 95%+ accuracy. </p>
+    </div>
+
+    <div class="timeline-entry">
+      <h3>Research Engineer - Hi-Tech Robotics (2019 - 2021)</h3>
+      <p>Delivered a client-specific 3D pallet pose estimation system using monocular vision and 2D laser 
+fusion, enabling precise pallet pickup and placement by AMRs in warehouse environments. </p>
+<p>Optimized traffic object detection and lane segmentation model for Jetson TX1 using a unified 
+MobileNet-SSD based architecture, enabling real-time performance on edge devices. </p>
+<p>Enhanced MobileNet-SSD for accurate traffic light detection and classification; collected and 
+curated a custom dataset, with real-time performance optimized for edge deployment. </p>
+    </div>
+
+    <div class="timeline-entry">
+      <h3>Computer Vision Engineer - Kritikal Solutions (2017 - 2021)</h3>
+      <p>Built a client-specific, real-time wood log girth measurement system with 2mm accuracy, running 
+24×7 on conveyor belts using a night vision camera in low-light industrial settings. </p>
+<p>Developed an image processing algorithm for microscopic (Scanning Electron Microscopic) high 
+resolution images to analyze hair cuticle structure and assess damage. </p>
+<p>Built a Haar and LBP based vehicle detection and classification model for a traffic analysis 
+product, optimized for real-time inference under diverse lighting and background conditions. </p>
+    </div>
+
   </div>
 </section>
 
+<!-- CERTIFICATIONS CARD GRID -->
 <section id="projects">
   <h2>Certifications & Courses</h2>
   <div class="card-list">
@@ -200,13 +253,14 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:111surajmaurya@gmail.com">111surajmaurya@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/111surajmaurya">github.com/111surajmaurya</a></p>
   <p>LinkedIn: <a href="https://linkedin.com/in/suraj-maurya-a44220a8">linkedin.com/in/suraj-maurya-a44220a8</a></p>
 </section>
 
+<!-- THEME TOGGLE -->
 <button id="themeToggle">Toggle Theme</button>
 
 <script>
