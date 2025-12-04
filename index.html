@@ -43,21 +43,16 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.15); /* very light overlay */
-      backdrop-filter: none; /* remove blur completely */
+      background: rgba(0,0,0,0.01);
+      backdrop-filter: none;
     }
 
     .hero-content {
       position: relative;
       color: white;
       max-width: 700px;
-      filter: none; /* ensure no blur */
-      text-shadow: 0 0 4px rgba(0,0,0,0.35); /* improve clarity */
-      animation: fadeUp 1.5s ease;
-    } {
-      position: relative;
-      color: white;
-      max-width: 700px;
+      filter: none;
+      text-shadow: 0 0 4px rgba(0,0,0,0.35);
       animation: fadeUp 1.5s ease;
     }
 
@@ -109,12 +104,11 @@
     /* SECTION */
     section {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 30px auto;
       padding: 20px;
       background: var(--card);
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      transition: background 0.4s;
     }
 
     /* TIMELINE */
@@ -151,6 +145,23 @@
       border-color: var(--accent);
     }
 
+    /* HOBBY BADGES */
+    .hobby-badge {
+      display: inline-block;
+      padding: 10px 18px;
+      margin: 8px;
+      background: rgba(77,166,255,0.1);
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .hobby-badge:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
     /* TOGGLE BUTTON */
     #themeToggle {
       position: fixed;
@@ -185,6 +196,8 @@
 <nav>
   <a href="#about">About</a>
   <a href="#resume">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#hobbies">Hobbies</a>
   <a href="#projects">Certifications</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -193,52 +206,61 @@
 <section id="about">
   <h2>About Me</h2>
   <p>Senior ML Engineer with 8+ years building AI solutions in Sports Analytics, ADAS, and Computer Vision. 
-Specializes in scalable Computer Vision, ML, Generative AI, and patented high-impact innovations. </p>
+Specializes in scalable Computer Vision, ML, Generative AI, and patented high-impact innovations.</p>
 </section>
 
-<!-- EXPERIENCE TIMELINE -->
+<!-- EXPERIENCE -->
 <section id="resume">
   <h2>Experience Timeline</h2>
   <div class="timeline">
 
     <div class="timeline-entry">
       <h3>Stats Perform - Computer Vision-III Engineer (Aug 2021 - Present)</h3>
-      <p>Developed a diffusion based generative model leveraging transformers architecture, to impute the 
-complete trajectory of soccer players, using only 60-70% partial trajectories from broadcast footage.</p> 
-<p>Developed a patented Graph Recurrent Neural Network (GRNN) for real-time soccer player 
-identification, using spatial, temporal, and appearance features of the player. Scaled deployment 
-to 6,000+ games per season, reducing per-game processing time by 30%.</p>
-<p>Developed an Extended Kalman Filter based soccer ball tracker leveraging YOLO ball detections 
-to handle occlusion, nonlinear motion, and high-speed movement in broadcast footage, 
-achieving a 15% accuracy improvement over the baseline.</p> 
-<p>Designed and trained a CRNN based OCR model to accurately recognize jersey numbers in 
-low-resolution and motion-blurred images, achieving 95%+ accuracy. </p>
+      <p>● Built diffusion-based generative model leveraging transformer architecture to impute complete soccer player trajectories using only partial broadcast trajectories.</p>
+      <p>● Developed patented GRNN for real-time player identification processing 6000+ games per season.</p>
+      <p>● Built EKF-based ball tracker improving accuracy by 15% in broadcast video.</p>
+      <p>● Trained CRNN-based OCR for jersey number recognition with 95%+ accuracy.</p>
     </div>
 
     <div class="timeline-entry">
       <h3>Research Engineer - Hi-Tech Robotics (2019 - 2021)</h3>
-      <p>Delivered a client-specific 3D pallet pose estimation system using monocular vision and 2D laser 
-fusion, enabling precise pallet pickup and placement by AMRs in warehouse environments. </p>
-<p>Optimized traffic object detection and lane segmentation model for Jetson TX1 using a unified 
-MobileNet-SSD based architecture, enabling real-time performance on edge devices. </p>
-<p>Enhanced MobileNet-SSD for accurate traffic light detection and classification; collected and 
-curated a custom dataset, with real-time performance optimized for edge deployment. </p>
+      <p>● Designed 3D pallet pose estimation for AMRs using vision + laser fusion.</p>
+      <p>● Optimized lane segmentation & object detection for Jetson TX1.</p>
+      <p>● Trained and deployed traffic light detection system for edge AI.</p>
     </div>
 
     <div class="timeline-entry">
       <h3>Computer Vision Engineer - Kritikal Solutions (2017 - 2021)</h3>
-      <p>Built a client-specific, real-time wood log girth measurement system with 2mm accuracy, running 
-24×7 on conveyor belts using a night vision camera in low-light industrial settings. </p>
-<p>Developed an image processing algorithm for microscopic (Scanning Electron Microscopic) high 
-resolution images to analyze hair cuticle structure and assess damage. </p>
-<p>Built a Haar and LBP based vehicle detection and classification model for a traffic analysis 
-product, optimized for real-time inference under diverse lighting and background conditions. </p>
+      <p>● Designed real-time wood log measurement system with 2mm accuracy.</p>
+      <p>● Developed hair cuticle damage analysis for microscopic imagery.</p>
+      <p>● Built vehicle detection & classification using Haar and LBP.</p>
     </div>
 
   </div>
 </section>
 
-<!-- CERTIFICATIONS CARD GRID -->
+<!-- EDUCATION SECTION -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="timeline-entry">
+      <h3>B.Tech in Electronics and Communication Engineering (ECE)</h3>
+      <p>2013 - 2017<br>The LNM Institute of Information Technology, Jaipur</p>
+      <p><strong>CGPA:</strong> 7.6 / 10</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+  <h2>Hobbies</h2>
+  <div>
+    <span class="hobby-badge">Chess</span>
+    <span class="hobby-badge">Travelling</span>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
 <section id="projects">
   <h2>Certifications & Courses</h2>
   <div class="card-list">
