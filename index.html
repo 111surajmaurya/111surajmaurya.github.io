@@ -1,18 +1,118 @@
----
-layout: default
-title: Suraj Maurya - AI Scientist
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suraj Maurya - AI Scientist</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #e6e6e6;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(to bottom right, #1a1a1a, #000000);
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 20px;
+      opacity: 0.8;
+    }
+
+    nav {
+      background: #111;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    nav a {
+      color: #e6e6e6;
+      text-decoration: none;
+      font-size: 16px;
+      padding-bottom: 5px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid #4da6ff;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 20px;
+      background: #141414;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #4da6ff;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background: #0f0f0f;
+      margin-top: 60px;
+      border-top: 1px solid #222;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+
+    .highlight-box {
+      background: #1b1b1b;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 15px;
+      border-left: 4px solid #4da6ff;
+    }
+  </style>
+</head>
+<body>
 
 <header>
   <h1>Suraj Maurya</h1>
-  <p>AI Scientist | Computer Vision | Deep Learning |</p>
+  <p>AI Scientist | Computer Vision | Deep Learning</p>
 </header>
 
 <nav>
   <ul>
-    <li><a href="#about">About Me</a></li>
-    <li><a href="#resume">Resume</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Experience</a></li>
+    <li><a href="#projects">Certifications</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -24,48 +124,53 @@ title: Suraj Maurya - AI Scientist
 
 <section id="resume">
   <h2>Experience</h2>
-  <ul>
-    <li><strong>Senior AI Scientist - Stats Perform (2021 - Present)</strong>
-      <ul>
-        <li>Patented AI Model: Developed a Graph Recurrent Neural Network (GRNN) for real-time soccer player identification, integrating spatial, temporal, and appearance features. Deployed at scale to process 6000+ games per season.</li>
-        <li>Ball Tracking Innovation: Designed an Extended Kalman Filter (EKF)-based tracker for soccer ball tracking, handling occlusions, nonlinear motion, and high-speed movements, improving tracking accuracy by 30% over baseline methods.</li>
-        <li>OCR for Jersey Recognition: Trained a custom CRNN-based OCR model, overcoming challenges of low-quality images, boosting recognition accuracy to 95%+ on blurred jerseys.</li>
-      </ul>
-    </li>
-    <li><strong>Research Engineer - Hi-Tech Robotics System Ltd. (2019 - 2021)</strong>
-      <ul>
-        <li>ADAS & Robotics: Spearheaded deep learning, computer vision, and system optimization projects for real-world autonomous applications.</li>
-        <li>Edge AI Deployment: Designed an efficient deep learning architecture optimized for Jetson Nano, achieving real-time object segmentation for Advanced Driver Assistance Systems (ADAS).</li>
-        <li>Autonomous Mobile Robots (AMR): Engineered a pallet detection & 3D pose estimation system using camera + 2D laser sensors, deployed on Intel Neural Compute Stick 2.</li>
-        <li>LIDAR-Based Navigation: Developed a 3D obstacle detection & avoidance system, improving navigation safety by 25% for autonomous robots.</li>
-      </ul>
-    </li>
-    <li><strong>Data Scientist - Claim Genius (2019)</strong>
-      <ul>
-        <li>AI for Insurance: Led vehicle damage analysis projects using image-based deep learning models for detecting and classifying dents, tears, and scratches, improving claim processing efficiency by 40%</li>
-      </ul>
-    </li>
-    <li><strong>Kritikal Solutions – Computer Vision Engineer</strong>
-      <ul>
-        <li>Industrial Computer Vision: Built a real-time object measurement system for log analysis on a conveyor belt, achieving 2mm precision in width estimation.</li>
-        <li>Automotive AI Models: Trained a YOLOv3-based vehicle make classifier for 50+ manufacturers and a CNN-based color classifier with 95%+ accuracy across 7 colors.</li>
-        <li>Facial Analysis: Developed an image processing algorithm to detect pores on polarized facial images and classify them by shape and size, later integrated into skincare assessment solutions.</li>
-      </ul>
-    </li>
-  </ul>
+  <div class="highlight-box">
+    <h3>Senior AI Scientist - Stats Perform (2021 - Present)</h3>
+    <ul>
+      <li>Patented Graph Recurrent Neural Network for real-time soccer player identification, deployed at scale for 6000+ games each season.</li>
+      <li>Designed EKF-based ball tracker improving tracking accuracy by 30 percent.</li>
+      <li>Trained custom CRNN OCR achieving 95 percent accuracy on blurred jerseys.</li>
+    </ul>
+  </div>
+
+  <div class="highlight-box">
+    <h3>Research Engineer - Hi-Tech Robotics (2019 - 2021)</h3>
+    <ul>
+      <li>Built deep learning and robotics solutions for real-world autonomous systems.</li>
+      <li>Optimized segmentation models for Jetson Nano achieving real-time inference.</li>
+      <li>Developed pallet detection and pose estimation using camera and laser sensors.</li>
+      <li>Designed 3D obstacle detection improving navigation safety by 25 percent.</li>
+    </ul>
+  </div>
+
+  <div class="highlight-box">
+    <h3>Data Scientist - Claim Genius (2019)</h3>
+    <ul>
+      <li>Developed vehicle damage analysis models improving claim automation by 40 percent.</li>
+    </ul>
+  </div>
+
+  <div class="highlight-box">
+    <h3>Kritikal Solutions – Computer Vision Engineer</h3>
+    <ul>
+      <li>Developed 2mm-precision real-time log measurement system.</li>
+      <li>Trained YOLOv3-based vehicle make and CNN-based color classifier.</li>
+      <li>Built polarized-image pore detection system for skincare analysis.</li>
+    </ul>
+  </div>
 </section>
 
 <section id="projects">
-  <h2>CERTIFICATIONS & COURSES</h2>
+  <h2>Certifications & Courses</h2>
   <ul>
-    <li><strong>Introduction to Diffusion Models</strong></li>
-    <li><strong>AI Agents Fundamental</strong></li>
-    <li><strong>Generative AI with Large Language Models</strong></li>
-    <li><strong>Introduction to TensorFlow for AI, ML, and Deep Learning</strong></li>
-    <li><strong>Convolutional Neural Networks Specialization</strong></li>
-    <li><strong>Neural Networks & Deep Learning</strong></li>
-    <li><strong>Structuring Machine Learning Projects</strong></li>
-    <li><strong>Digital Image Processing</strong></li>
+    <li>Introduction to Diffusion Models</li>
+    <li>AI Agents Fundamental</li>
+    <li>Generative AI with LLMs</li>
+    <li>TensorFlow for AI, ML, and Deep Learning</li>
+    <li>Convolutional Neural Networks Specialization</li>
+    <li>Neural Networks & Deep Learning</li>
+    <li>Structuring Machine Learning Projects</li>
+    <li>Digital Image Processing</li>
   </ul>
 </section>
 
@@ -77,5 +182,8 @@ title: Suraj Maurya - AI Scientist
 </section>
 
 <footer>
-  <p>&copy; 2025 Suraj Maurya. All Rights Reserved.</p>
+  <p>© 2025 Suraj Maurya. All Rights Reserved.</p>
 </footer>
+
+</body>
+</html>
