@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -31,7 +31,7 @@
     /* HERO SECTION */
     .hero {
       height: 90vh;
-      background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      background: url('bg.jpg') center/cover no-repeat; /* using bg.jpg */
       position: relative;
       display: flex;
       align-items: center;
@@ -43,14 +43,14 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
+      background: rgba(0,0,0,0.15);
     }
 
     .hero-content {
       position: relative;
       color: white;
       max-width: 700px;
+      text-shadow: 0 0 4px rgba(0,0,0,0.35);
       animation: fadeUp 1.5s ease;
     }
 
@@ -75,7 +75,6 @@
       100% { transform: translateY(0); }
     }
 
-    /* NAVBAR */
     nav {
       background: #111;
       padding: 15px 0;
@@ -99,7 +98,6 @@
       color: var(--accent);
     }
 
-    /* SECTION */
     section {
       max-width: 900px;
       margin: 60px auto;
@@ -110,7 +108,6 @@
       transition: background 0.4s;
     }
 
-    /* TIMELINE */
     .timeline {
       position: relative;
       margin-left: 20px;
@@ -124,7 +121,6 @@
 
     .timeline-entry h3 { color: var(--accent); }
 
-    /* CARDS */
     .card-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -135,8 +131,8 @@
       background: var(--card);
       padding: 15px;
       border-radius: 8px;
-      transition: 0.3s;
       border: 1px solid #333;
+      transition: 0.3s;
     }
 
     .card:hover {
@@ -144,7 +140,6 @@
       border-color: var(--accent);
     }
 
-    /* TOGGLE BUTTON */
     #themeToggle {
       position: fixed;
       right: 20px;
@@ -162,11 +157,9 @@
 </head>
 <body>
 
-<!-- Floating animated circles -->
 <div class="float-circle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
 <div class="float-circle" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
 
-<!-- HERO SECTION -->
 <header class="hero">
   <div class="hero-content">
     <h1 style="font-size: 52px; margin-bottom: 10px;">Suraj Maurya</h1>
@@ -174,7 +167,6 @@
   </div>
 </header>
 
-<!-- NAV -->
 <nav>
   <a href="#about">About</a>
   <a href="#resume">Experience</a>
@@ -182,41 +174,18 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
-  <p>Accomplished AI Scientist with 7+ years of experience in machine learning, sports analytics, autonomous systems, and computer vision. Proven expertise in scalable AI systems, product deployment, and innovation-driven research. Passionate about advancing AI technology and building high‑impact solutions.</p>
+  <p>Accomplished AI Scientist with 7+ years of experience...</p>
 </section>
 
-<!-- EXPERIENCE TIMELINE -->
 <section id="resume">
   <h2>Experience Timeline</h2>
   <div class="timeline">
-
-    <div class="timeline-entry">
-      <h3>Senior AI Scientist - Stats Perform (2021 - Present)</h3>
-      <p>Developed GRNN for player ID, EKF ball tracking, and high‑accuracy OCR models deployed across large‑scale sports analytics pipelines.</p>
-    </div>
-
-    <div class="timeline-entry">
-      <h3>Research Engineer - Hi-Tech Robotics (2019 - 2021)</h3>
-      <p>Designed autonomous navigation systems, Jetson‑optimized models, pallet detection, safety-critical vision systems.</p>
-    </div>
-
-    <div class="timeline-entry">
-      <h3>Data Scientist - Claim Genius (2019)</h3>
-      <p>Built damage detection models improving claim automation and classification accuracy.</p>
-    </div>
-
-    <div class="timeline-entry">
-      <h3>Computer Vision Engineer - Kritikal Solutions</h3>
-      <p>Developed high‑precision industrial CV systems and automotive classifiers.</p>
-    </div>
-
+    <!-- timeline entries -->
   </div>
 </section>
 
-<!-- CERTIFICATIONS CARD GRID -->
 <section id="projects">
   <h2>Certifications & Courses</h2>
   <div class="card-list">
@@ -231,7 +200,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: <a href="mailto:111surajmaurya@gmail.com">111surajmaurya@gmail.com</a></p>
@@ -239,7 +207,6 @@
   <p>LinkedIn: <a href="https://linkedin.com/in/suraj-maurya-a44220a8">linkedin.com/in/suraj-maurya-a44220a8</a></p>
 </section>
 
-<!-- THEME TOGGLE -->
 <button id="themeToggle">Toggle Theme</button>
 
 <script>
